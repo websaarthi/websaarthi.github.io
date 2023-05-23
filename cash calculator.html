@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cash Calculator</title>
+    <meta charset="UTF-8"/>  
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+<style>
+
+@font-face {
+
+       
+font-family: KrutiDev;
+src: url(path/to/kruti_dev.woff);
+}
+
+    #TwoK{ margin: 10px;  }
+    #FiveH{ margin: 10px; }
+    #TwoH{ margin: 10px; }
+    #oneH{ margin: 10px; }
+    #fifty{ margin: 10px; }
+    #twenty{ margin: 10px; }
+    #ten{ margin: 10px; }
+    #five{ margin: 10px; }
+    #two{ margin: 10px; }
+    #one{ margin: 10px; }
+            
+    
+              
+    #t1{ color: red; }
+    #t2{ color: red; }
+    #t3{color: red; }
+    #t4{ color: red; }
+    #t5{ color: red; }
+    #t6{ color: red;  }
+    #t7{ color: red;  }
+    #t8{ color: red;  }
+    #t9{ color: red;  }
+    #t10{ color: red; }
+
+    input[type=number]{
+        width: 15%;
+  padding: 0.29%;
+  margin: 4px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+    }
+    input[type=number]:focus {
+  border: 3px solid salmon;}
+
+
+  #btn{
+    border:0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: rgba(220,0,0,1);
+    background-image: linear-gradient(to top left, rgba(0,0,0,.2),rgba(0,0,0,.2)30%,rgba(0,0,0,0));
+    box-shadow: inset 2px 2px 3px rgba(255,255,255,.6),inset -2px -2px 3px rgba(0, 0, 0, .6);
+    
+    
+  }
+
+  #btn:hover {
+    background-color: rgba(255,0,0,1);
+
+  }
+  #btn:active{
+    box-shadow: inset -2px -2px 3px rgba(255,255,255,.6), inset 2px 2px 3px rgba(0,0,0,.6);
+  }
+  @media screen and (max-width:720px) {
+  #hl {
+    font-size: 2rem;
+  }
+  
+  input[type=number]{
+    width: 30%;
+  }
+}
+  @media screen and (min-width:721px) {
+  #tg {
+    font-size: 2rem;
+  }
+  
+}
+
+
+
+
+
+
+    <meta charset="UTF-8" />  // This prints in Hindi
+    @font-face {
+    font-family: KrutiDev;
+    src: url(path/to/kruti_dev.woff);}
+
+
+    
+
+
+    
+    </style>
+</head>
+<body>
+  
+<h1 id="hl">Cash Calculator</h1>
+
+&#x20b9 2000: <input type="number" id="TwoK"  min="0"> <button id="t1"></button><br>
+&#x20b9 500:  <input type="number" id="FiveH" min="0"> <button id="t2"></button><br>
+&#x20b9 200:  <input type="number" id="TwoH" min="0"> <button id="t3"></button><br>
+&#x20b9 100: <input type="number" id="oneH" min="0"> <button id="t4"></button><br>
+&#x20b9 50: <input type="number" id="fifty" min="0"> <button id="t5"></button><br>
+&#x20b9 20: <input type="number" id="twenty" min="0"> <button id="t6"></button><br>
+&#x20b9 10: <input type="number" id="ten"  min="0"> <button id="t7"></button><br>
+&#x20b9 5: <input type="number" id="five"  min="0"> <button id="t8"></button><br>
+&#x20b9 2: <input type="number" id="two"  min="0"> <button id="t9"></button><br>
+&#x20b9 1: <input type="number" id="one"  min="0"> <button id="t10"></button><br>
+
+<br>
+
+<a href="#demo3"><button onClick="total(); ind(); num_english(); num_hindi()" id="btn">Total Amount</button></a>
+
+<h3 id="demo" style="color:darkblue;"></h3>
+<h4 id="demo2" style="color:darkblue ;"></h4>
+<h4 id="demo3" style="color:darkblue ;"></h4>
+
+<script>
+  
+
+function total(){
+
+tk = document.getElementById("TwoK").value;
+ fh = document.getElementById("FiveH").value;
+twoh = document.getElementById("TwoH").value;
+ oh = document.getElementById("oneH").value;
+fif = document.getElementById("fifty").value;
+ twn = document.getElementById("twenty").value;
+ tn = document.getElementById("ten").value;
+fi = document.getElementById("five").value;
+to = document.getElementById("two").value;
+ on = document.getElementById("one").value;
+
+var sum = (tk*2000)+(fh*500)+(twoh*200)+(oh*100)+(fif*50)+(twn*20)+(tn*10)+(fi*5)+(to*2)+(on*1);
+
+document.getElementById("demo").innerHTML = "Total Amount is "+sum;
+
+}
+
+function ind() {
+    tk = document.getElementById("TwoK").value;
+ fh = document.getElementById("FiveH").value;
+twoh = document.getElementById("TwoH").value;
+ oh = document.getElementById("oneH").value;
+fif = document.getElementById("fifty").value;
+ twn = document.getElementById("twenty").value;
+ tn = document.getElementById("ten").value;
+fi = document.getElementById("five").value;
+to = document.getElementById("two").value;
+ on = document.getElementById("one").value;
+    
+    
+if (tk!=0) { document.getElementById("t1").innerHTML = "   = "+(tk*2000); }else{document.getElementById("t1").innerHTML = ""}
+if(fh!=0) {document.getElementById("t2").innerHTML = "    = "+(fh*500); }else{document.getElementById("t2").innerHTML = ""}
+if(twoh!=0){ document.getElementById("t3").innerHTML = "    = "+(twoh*200); } else{document.getElementById("t3").innerHTML = ""}
+if(oh!=0) { document.getElementById("t4").innerHTML = "    = "+(oh*100); } else{document.getElementById("t4").innerHTML = ""}
+if(fif!=0) { document.getElementById("t5").innerHTML = "    = "+(fif*50); } else{document.getElementById("t5").innerHTML = ""}
+if(twn!=0) { document.getElementById("t6").innerHTML = "    = "+(twn*20); } else{document.getElementById("t6").innerHTML = ""}
+if(tn!=0) { document.getElementById("t7").innerHTML = "    = "+(tn*10); } else{document.getElementById("t7").innerHTML = ""}
+if(fi!=0) {document.getElementById("t8").innerHTML = "    = "+(fi*5); } else{document.getElementById("t8").innerHTML = ""}
+if(to!=0){ document.getElementById("t9").innerHTML = "    = "+(to*2); } else{document.getElementById("t9").innerHTML = ""}
+if(on!=0){ document.getElementById("t10").innerHTML = "    = "+(on*1); } else{document.getElementById("t10").innerHTML = ""}
+}
+
+function num_english(){
+    tk = document.getElementById("TwoK").value;  fh = document.getElementById("FiveH").value; twoh = document.getElementById("TwoH").value;  oh = document.getElementById("oneH").value;
+fif = document.getElementById("fifty").value;  twn = document.getElementById("twenty").value;  tn = document.getElementById("ten").value; fi = document.getElementById("five").value;
+to = document.getElementById("two").value;  on = document.getElementById("one").value; 
+var sum = (tk*2000)+(fh*500)+(twoh*200)+(oh*100)+(fif*50)+(twn*20)+(tn*10)+(fi*5)+(to*2)+(on*1);
+
+var num = {1:"One", 2:"Two", 3:"Three", 4:"Four", 5:"Five", 6:"Six", 7:"Seven", 8:"Eight", 9:"Nine"};
+var num2 = {1:"Ten", 2:"Twenty", 3:"Thirty", 4:"Forty", 5:"Fifty", 6:"Sixty", 7:"Seventy", 8:"Eighty", 9:"Ninety"};
+var num3 = {10:"Ten",11:"Eleven", 12:"Twelve", 13:"Thirteen", 14:"Forteen", 15:"Fifteen", 16:"Sixteen", 17:"Seventeen", 18:"Eighteen", 19:"Nineteen"};
+
+if(sum>0 && sum<10){
+    var words = one_digit(sum);
+    document.getElementById("demo2").innerHTML = words+" Rupee";
+}
+if(sum>=10 && sum<100){
+    var words = two_digit(sum);
+    document.getElementById("demo2").innerHTML = words+" Rupees";
+}
+if(sum>=100 && sum<1000){
+    var words = three_digit(sum);
+    document.getElementById("demo2").innerHTML = words+" Rupees";
+}
+if(sum>=1000 && sum<10000){
+    var words = four_digit(sum);
+    document.getElementById("demo2").innerHTML = words+" Rupees";
+}
+if(sum>=10000 && sum<100000){
+    var words = five_digit(sum);
+    document.getElementById("demo2").innerHTML = words+" Rupees";
+}
+if(sum>=100000 && sum<1000000){
+    var words = six_digit(sum);
+    document.getElementById("demo2").innerHTML = words+" Rupees";
+}
+if(sum>=1000000 && sum<10000000){
+    var words = seven_digit(sum);
+    document.getElementById("demo2").innerHTML = words+" Rupees";
+}
+if(sum>=10000000 && sum<100000000){
+    var words = eight_digit(sum);
+    document.getElementById("demo2").innerHTML = words+" Rupees";
+}
+if(sum>=100000000 && sum<1000000000){
+    var words = nine_digit(sum);
+    document.getElementById("demo2").innerHTML = words+" Rupees";
+}
+
+function one_digit(sum){
+    var figures = num[sum];
+    return figures;
+}
+
+function two_digit(sum){
+    const n1 = sum/10;
+    const n2 = sum%10;
+    const b =Math.floor(n2); // This is done because it converts the number into single digit. 5/2 gives 2.5. But when we use Math.floor, the answer is only 2.
+    const a = Math.floor(n1);
+    if(sum>=10 && sum<20){
+        var figures = num3[sum];
+        return figures;
+    }
+    else{
+        if(b == 0){
+            var figures = num2[a];
+            return figures;
+        }
+        else{
+            var figures = num2[a]+" "+num[b];
+            return figures;
+        }
+        
+    }
+}
+
+function three_digit(sum){
+    const n1 = sum/100;
+    const n2 = sum%100;
+    const b =Math.floor(n2);
+    const a = Math.floor(n1);
+    if(b == 0){
+        var figures = num[a]+" Hundred";
+        return figures;
+    }
+    else{
+        if(b>0 && b<10){
+            var rem = one_digit(b);
+            var figures = num[a]+" Hundred And "+rem;
+            return figures;
+        }
+        else{
+            var rem = two_digit(b);
+            var figures = num[a]+" Hundred And "+rem;
+            return figures;
+        }
+    }
+}
+
+function four_digit(sum){
+    const n1 = sum/1000;
+    const n2 = sum%1000;
+    const b =Math.floor(n2);
+    const a = Math.floor(n1);
+    if(b == 0){
+        var figures = num[a]+" Thousand ";
+        return figures;
+    }
+    else{
+        if(b>0 && b<10){
+            var rem = one_digit(b);
+            var figures = num[a]+" Thousand "+rem;
+            return figures;
+    }
+    else if (b>=100 && b<1000){
+        var rem = three_digit(b);
+            var figures = num[a]+" Thousand "+rem;
+            return figures;
+    }
+    else{
+        var rem = two_digit(b);
+            var figures = num[a]+" Thousand "+rem;
+            return figures;
+    }
+
+}}
+function five_digit(sum){
+    const n1 = sum/1000;
+    const n2 = sum%1000;   
+    
+    const a = Math.floor(n1);
+    const b = Math.floor(n2);
+    
+    var figures = two_digit(a);
+    
+    
+    if(b == 0){
+        figures = figures+" Thousand ";
+        return figures;
+    }
+    else{
+        if(b>0 && b<10){
+            var ad = one_digit(b);
+            var figures = figures+" Thousand "+ad;
+            return figures;
+        }
+        else if(b>=10 && b<100){
+            var ad = two_digit(b);
+            var figures = figures+" Thousand "+ad;
+            return figures;
+        }
+        else if(b>=100 && b<1000){
+            var ad = three_digit(b); 
+            var figures = figures+" Thousand "+ad;
+            return figures;
+        }
+        else{
+            var ad = four_digit(b);
+            var figures = figures+" Thousand "+ad;
+            return figures;
+        }
+    }
+    
+
+}
+
+function six_digit(sum){
+    const n1 = sum/100000;
+    const n2 = sum%100000;
+    const a = Math.floor(n1);
+    const b = Math.floor(n2);
+    var figures = num[a]+" Lakh ";
+
+    if(b==0){
+        return figures;
+    }
+    else{
+
+        if(b>0 && b<10){
+            var ad = one_digit(b);
+            var figures = figures+" And "+ad;
+            return figures;
+        }
+        else if(b>=10 && b<100){
+            var ad = two_digit(b);
+            var figures = figures+" And "+ad;
+            return figures;
+        }
+        else if(b>=100 && b<1000){
+            var ad = three_digit(b); 
+            var figures = figures+" "+ad;
+            return figures;
+        }
+        else if(b>=1000 && b<10000){
+            var ad = four_digit(b);
+            var figures = figures+" "+ad;
+            return figures;
+        }
+        else{
+            var ad = five_digit(b);
+            var figures = figures+" "+ad;
+            return figures;
+        }
+
+    }
+}
+function seven_digit(sum){
+    const n1 = sum/100000;
+    const n2 = sum%100000;
+    const a = Math.floor(n1);
+    const b = Math.floor(n2);
+    var figures = two_digit(a)+" Lakh ";
+
+    if(b==0){
+        return figures;
+    }
+    else{
+
+        if(b>0 && b<10){
+            var ad = one_digit(b);
+            var figures = figures+" And "+ad;
+            return figures;
+        }
+        else if(b>=10 && b<100){
+            var ad = two_digit(b);
+            var figures = figures+" And "+ad;
+            return figures;
+        }
+        else if(b>=100 && b<1000){
+            var ad = three_digit(b); 
+            var figures = figures+" "+ad;
+            return figures;
+        }
+        else if(b>=1000 && b<10000){
+            var ad = four_digit(b);
+            var figures = figures+" "+ad;
+            return figures;
+        }
+        else if(b>=10000 && b<100000){
+            var ad = five_digit(b);
+            var figures = figures+" "+ad;
+            return figures;
+        }
+
+    }
+}
+
+function eight_digit(sum){
+    const n1 = sum/10000000;
+    const n2 = sum%10000000;
+    const a = Math.floor(n1);
+    const b = Math.floor(n2);
+    var figures = num[a]+" Crore ";
+
+    if(b==0){
+        return figures;
+    }
+    else{
+
+        if(b>0 && b<10){
+            var ad = one_digit(b);
+            var figures = figures+" And "+ad;
+            return figures;
+        }
+        else if(b>=10 && b<100){
+            var ad = two_digit(b);
+            var figures = figures+" And "+ad;
+            return figures;
+        }
+        else if(b>=100 && b<1000){
+            var ad = three_digit(b); 
+            var figures = figures+" "+ad;
+            return figures;
+        }
+        else if(b>=1000 && b<10000){
+            var ad = four_digit(b);
+            var figures = figures+" "+ad;
+            return figures;
+        }
+        else if(b>=10000 && b<100000){
+            var ad = five_digit(b);
+            var figures = figures+" "+ad;
+            return figures;
+        }
+        else if(b>=100000 && b<1000000){
+            var ad = six_digit(b);
+            var figures = figures+" "+ad;
+            return figures;
+        }
+        else{
+            var ad = seven_digit(b);
+            var figures = figures+" "+ad;
+            return figures;
+        }
+
+    }
+}
+
+
+function nine_digit(sum){
+    const n1 = sum/10000000;
+    const n2 = sum%10000000;
+    const a = Math.floor(n1);
+    const b = Math.floor(n2);
+    var figures = two_digit(a)+" Crore ";
+
+    if(b==0){
+        return figures;
+    }
+    else{
+
+        if(b>0 && b<10){
+            var ad = one_digit(b);
+            var figures = figures+" And "+ad;
+            return figures;
+        }
+        else if(b>=10 && b<100){
+            var ad = two_digit(b);
+            var figures = figures+" And "+ad;
+            return figures;
+        }
+        else if(b>=100 && b<1000){
+            var ad = three_digit(b); 
+            var figures = figures+" "+ad;
+            return figures;
+        }
+        else if(b>=1000 && b<10000){
+            var ad = four_digit(b);
+            var figures = figures+" "+ad;
+            return figures;
+        }
+        else if(b>=10000 && b<100000){
+            var ad = five_digit(b);
+            var figures = figures+" "+ad;
+            return figures;
+        }
+        else if(b>=100000 && b<1000000){
+            var ad = six_digit(b);
+            var figures = figures+" "+ad;
+            return figures;
+        }
+        else{
+            var ad = seven_digit(b);
+            var figures = figures+" "+ad;
+            return figures;
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+function num_hindi(){
+    tk = document.getElementById("TwoK").value;  fh = document.getElementById("FiveH").value; twoh = document.getElementById("TwoH").value;  oh = document.getElementById("oneH").value;
+fif = document.getElementById("fifty").value;  twn = document.getElementById("twenty").value;  tn = document.getElementById("ten").value; fi = document.getElementById("five").value;
+to = document.getElementById("two").value;  on = document.getElementById("one").value; 
+var sum = (tk*2000)+(fh*500)+(twoh*200)+(oh*100)+(fif*50)+(twn*20)+(tn*10)+(fi*5)+(to*2)+(on*1);
+
+var num = {1:"एक", 2:"दो", 3:"तीन", 4:"चार", 5:"पांच", 6:"छह", 7:"सात", 8:"आठ", 9:"नौ",10:"दस",11:"ग्यारह", 12:"बारह", 13:"तेरह",14:"चौदह",
+15:"पंद्रह",16:"सोलह",17:"सत्रह",18:"अठारह",19:"उन्नीस",20:"बीस",21:"इक्कीस",22:"बाईस",23:"तेईस",24:"चौबीस",25:"पच्चीस",26:"छब्बीस",27:"सत्ताईस",
+28:"अट्ठाईस",29:"उन्तीस",30:"तीस", 31:"इकतीस",32:"बत्तीस",33:"तेंतीस",34:"चौंतीस",35:"पैंतीस",36:"छत्तीस",37:"सैंतीस",38:"अड़तीस",39:"उनतालीस",40:"चालीस",
+41:"इकतालीस",42:"बयालीस",43:"तैंतालीस",44:"चवालीस",45:"पैंतालीस",46:"छियालीस",47:"सैंतालीस",48:"अड़तालीस",49:"उनचास",50:"पचास",
+51:"इक्यावन",52:"बावन",53:"तिरपन",54:"चौवन",55:"पचपन",56:"छप्पन",57:"सत्तावन",58:"अट्ठावन",59:"उनसठ",60:"साठ",61:"इकसठ",62:"बासठ",63:"तिरसठ",
+64:"चौंसठ",65:"पैसठ",66:"छियासठ",67:"सड़सठ",68:"अड़सठ",69:"उनहत्तर",70:"सत्तर",71:"इकहत्तर",72:"बहत्तर",73:"तिहत्तर",74:"चौहत्तर",75:"पचहत्तर",76:"छिहत्तर",77:"सतहत्तर",78:"अठहत्तर",79:"उनासी",80:"अस्सी",
+81:"इक्यासी",82:"बयासी",83:"तिरासी",84:"चौरासी",85:"पचासी",86:"छियासी",87:"सतासी",88:"अठासी",89:"नवासी",
+90:"नब्बे",91:"इक्यानबे",92:"बयान्वे",93:"तिरानवे",94:"चौरानवे",95:"पंचानवे",96:"छियानबे",97:"सत्तानवे",98:"अठानवे",99:"निन्यानवे"};
+
+if(sum>0 && sum<10){
+    var words = one_digit(sum);
+    document.getElementById("demo3").innerHTML = words+" रुपये ";
+}
+if(sum>=10 && sum<100){
+    var words = two_digit(sum);
+    document.getElementById("demo3").innerHTML = words+" रुपये ";
+}
+if(sum>=100 && sum<1000){
+    var words = three_digit(sum);
+    document.getElementById("demo3").innerHTML = words+" रुपये ";
+}
+if(sum>=1000 && sum<10000){
+    var words = four_digit(sum);
+    document.getElementById("demo3").innerHTML = words+" रुपये ";
+}
+if(sum>=10000 && sum<1000000){
+    var words = five_digit(sum);
+    document.getElementById("demo3").innerHTML = words+" रुपये ";
+}
+if(sum>=100000 && sum<1000000){
+    var words = six_digit(sum);
+    document.getElementById("demo3").innerHTML = words+" रुपये ";
+}
+if(sum>=1000000 && sum<10000000){
+    var words = seven_digit(sum);
+    document.getElementById("demo3").innerHTML = words+" रुपये ";
+}
+if(sum>=10000000 && sum<100000000){
+    var words = eight_digit(sum);
+    document.getElementById("demo3").innerHTML = words+" रुपये ";
+}
+if(sum>=100000000 && sum<1000000000){
+    var words = nine_digit(sum);
+    document.getElementById("demo3").innerHTML = words+" रुपये";
+}
+
+function one_digit(sum){
+    var figures = num[sum];
+    return figures;
+}
+function two_digit(sum){
+    var figures = num[sum];
+    return figures; 
+}
+function three_digit(sum){
+    const n1 = sum/100;
+    const n2 = sum%100;
+    const b =Math.floor(n2);
+    const a = Math.floor(n1);
+    if(b == 0){
+        var figures = num[a]+" सौ";
+    return figures;
+    }
+    else{
+        var figures = num[a]+" सौ "+num[b];
+    return figures;
+    }
+
+}
+function four_digit(sum){
+    const n1 = sum/1000;
+    const n2 = sum%1000;
+    const b =Math.floor(n2);
+    const a = Math.floor(n1);
+    if(b == 0){
+        var figures = num[a]+" हज़ार ";
+        return figures;
+    }
+    else{
+        if(b>0 && b<10){
+            var rem = one_digit(b);
+            var figures = num[a]+" हज़ार "+rem;
+            return figures;
+    }
+    else if (b>=100 && b<1000){
+        var rem = three_digit(b);
+            var figures = num[a]+" हज़ार "+rem;
+            return figures;
+    }
+    else{
+        var rem = two_digit(b);
+            var figures = num[a]+" हज़ार "+rem;
+            return figures;
+    }
+
+}}
+
+function five_digit(sum){
+    const n1 = sum/1000;
+    const n2 = sum%1000;   
+    
+    const a = Math.floor(n1);
+    const b = Math.floor(n2);
+    
+    var figures = num[a];
+    
+    
+    if(b == 0){
+        figures = figures+" हज़ार ";
+        return figures;
+    }
+    else{
+        if(b>0 && b<10){
+            var ad = one_digit(b);
+            var figures = figures+" हज़ार "+ad;
+            return figures;
+        }
+        else if(b>=10 && b<100){
+            var ad = two_digit(b);
+            var figures = figures+" हज़ार "+ad;
+            return figures;
+        }
+        else if(b>=100 && b<1000){
+            var ad = three_digit(b); 
+            var figures = figures+" हज़ार "+ad;
+            return figures;
+        }
+        else{
+            var ad = four_digit(b);
+            var figures = figures+" हज़ार "+ad;
+            return figures;
+        }
+    }
+    
+
+}
+function six_digit(sum){
+    const n1 = sum/100000;
+    const n2 = sum%100000;
+    const a = Math.floor(n1);
+    const b = Math.floor(n2);
+    var figures = num[a]+" लाख ";
+
+    if(b==0){
+        return figures;
+    }
+    else{
+
+        if(b>0 && b<10){
+            var ad = one_digit(b);
+            var figures = figures+" और "+ad;
+            return figures;
+        }
+        else if(b>=10 && b<100){
+            var ad = two_digit(b);
+            var figures = figures+" और "+ad;
+            return figures;
+        }
+        else if(b>=100 && b<1000){
+            var ad = three_digit(b); 
+            var figures = figures+" "+ad;
+            return figures;
+        }
+        else if(b>=1000 && b<10000){
+            var ad = four_digit(b);
+            var figures = figures+" "+ad;
+            return figures;
+        }
+        else{
+            var ad = five_digit(b);
+            var figures = figures+" "+ad;
+            return figures;
+        }
+
+    }
+}
+
+function seven_digit(sum){
+    const n1 = sum/100000;
+    const n2 = sum%100000;
+    const a = Math.floor(n1);
+    const b = Math.floor(n2);
+    var figures = num[a]+" लाख ";
+
+    if(b==0){
+        return figures;
+    }
+    else{
+
+        if(b>0 && b<10){
+            var ad = one_digit(b);
+            var figures = figures+" और "+ad;
+            return figures;
+        }
+        else if(b>=10 && b<100){
+            var ad = two_digit(b);
+            var figures = figures+" और "+ad;
+            return figures;
+        }
+        else if(b>=100 && b<1000){
+            var ad = three_digit(b); 
+            var figures = figures+" "+ad;
+            return figures;
+        }
+        else if(b>=1000 && b<10000){
+            var ad = four_digit(b);
+            var figures = figures+" "+ad;
+            return figures;
+        }
+        else if(b>=10000 && b<100000){
+            var ad = five_digit(b);
+            var figures = figures+" "+ad;
+            return figures;
+        }
+
+    }
+}
+
+function eight_digit(sum){
+    const n1 = sum/10000000;
+    const n2 = sum%10000000;
+    const a = Math.floor(n1);
+    const b = Math.floor(n2);
+    var figures = num[a]+" करोड़ ";
+
+    if(b==0){
+        return figures;
+    }
+    else{
+
+        if(b>0 && b<10){
+            var ad = one_digit(b);
+            var figures = figures+" और "+ad;
+            return figures;
+        }
+        else if(b>=10 && b<100){
+            var ad = two_digit(b);
+            var figures = figures+" और "+ad;
+            return figures;
+        }
+        else if(b>=100 && b<1000){
+            var ad = three_digit(b); 
+            var figures = figures+" "+ad;
+            return figures;
+        }
+        else if(b>=1000 && b<10000){
+            var ad = four_digit(b);
+            var figures = figures+" "+ad;
+            return figures;
+        }
+        else if(b>=10000 && b<100000){
+            var ad = five_digit(b);
+            var figures = figures+" "+ad;
+            return figures;
+        }
+        else if(b>=100000 && b<1000000){
+            var ad = six_digit(b);
+            var figures = figures+" "+ad;
+            return figures;
+        }
+        else{
+            var ad = seven_digit(b);
+            var figures = figures+" "+ad;
+            return figures;
+        }
+
+    }
+}
+
+
+function nine_digit(sum){
+    const n1 = sum/10000000;
+    const n2 = sum%10000000;
+    const a = Math.floor(n1);
+    const b = Math.floor(n2);
+    var figures = two_digit(a)+" करोड़ ";
+
+    if(b==0){
+        return figures;
+    }
+    else{
+
+        if(b>0 && b<10){
+            var ad = one_digit(b);
+            var figures = figures+" And "+ad;
+            return figures;
+        }
+        else if(b>=10 && b<100){
+            var ad = two_digit(b);
+            var figures = figures+" And "+ad;
+            return figures;
+        }
+        else if(b>=100 && b<1000){
+            var ad = three_digit(b); 
+            var figures = figures+" "+ad;
+            return figures;
+        }
+        else if(b>=1000 && b<10000){
+            var ad = four_digit(b);
+            var figures = figures+" "+ad;
+            return figures;
+        }
+        else if(b>=10000 && b<100000){
+            var ad = five_digit(b);
+            var figures = figures+" "+ad;
+            return figures;
+        }
+        else if(b>=100000 && b<1000000){
+            var ad = six_digit(b);
+            var figures = figures+" "+ad;
+            return figures;
+        }
+        else{
+            var ad = seven_digit(b);
+            var figures = figures+" "+ad;
+            return figures;
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+</script>
+
+    
+
+</body>
+</html> 
+
