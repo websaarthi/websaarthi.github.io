@@ -6,7 +6,7 @@ const CACHE = "pwabuilder-page";
 var filesToCache = [
   '/index.html',
   
-  '/cash calculatore.html'
+  '/cash calculator.html'
 ];
 
 // TODO: replace the following with the correct offline fallback page i.e.: const offlineFallbackPage = "offline.html";
