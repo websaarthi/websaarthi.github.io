@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>GST CALCULATOR</title>
+    <meta charset="UTF-8"/> 
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <style>
+        @font-face {
+
+       
+font-family: KrutiDev;
+src: url(path/to/kruti_dev.woff);}
+        #demo{
+            color:blue;
+            font-weight: bold;    
+        }
+        #demo2{
+            color:blue;
+            font-weight: bold;    
+        }
+        #demo3{
+            color:blue;
+            font-weight: bold;    
+            
+        }
+        #inclu{
+            color:darkblue;
+            font-weight: bold;
+        }
+        #exclu{
+            color:darkblue;
+            font-weight: bold;    
+        }
+        #war{
+            color: red;
+        }
+        #war2{
+            color: red;
+        }
+
+
+        input[type=number]{
+        width: 15%;
+  padding: 0.29%;
+  margin: 4px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+    }
+    input[type=number]:focus {
+  border: 3px solid salmon;}
+
+  #inclu{
+    border:0;
+    line-height: 2.1;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: rgba(220,0,0,1);
+    background-image: linear-gradient(to top left, rgba(0,0,0,.2),rgba(0,0,0,.2)30%,rgba(0,0,0,0));
+    box-shadow: inset 2px 2px 3px rgba(255,255,255,.6),inset -2px -2px 3px rgba(0, 0, 0, .6);
+    
+    
+  }
+
+  #inclu:hover {
+    background-color: rgba(255,0,0,1);
+
+  }
+  #inclu:active{
+    box-shadow: inset -2px -2px 3px rgba(255,255,255,.6), inset 2px 2px 3px rgba(0,0,0,.6);
+  }
+
+
+  #exclu{
+    border:0;
+    line-height: 2.1;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: rgba(220,0,0,1);
+    background-image: linear-gradient(to top left, rgba(0,0,0,.2),rgba(0,0,0,.2)30%,rgba(0,0,0,0));
+    box-shadow: inset 2px 2px 3px rgba(255,255,255,.6),inset -2px -2px 3px rgba(0, 0, 0, .6);
+    
+    
+  }
+
+  #exclu:hover {
+    background-color: rgba(255,0,0,1);
+
+  }
+  #exclu:active{
+    box-shadow: inset -2px -2px 3px rgba(255,255,255,.6), inset 2px 2px 3px rgba(0,0,0,.6);
+  }
+
+  #thr:focus{
+    border: 3px solid salmon;
+    background-color: #fff;
+
+  }
+  #fv:focus{
+    border: 3px solid salmon;
+    background-color: #fff;
+
+  }
+  #tl:focus{
+    border: 3px solid salmon;
+    background-color: #fff;
+
+  }
+  #eh:focus{
+    border: 3px solid salmon;
+    background-color: #fff;
+
+  }
+  #te:focus{
+    border: 3px solid salmon;
+    background-color: #fff;
+
+  }
+
+  @media screen and (max-width:720px) {
+  #tg {
+    font-size: 2rem;
+  }
+  
+  #gstl{
+    font-size: 1.2rem;
+  }
+  #amtl{
+    font-size: 1.2rem;
+  }
+  #amt{
+    width: 30%;
+  }
+}
+  @media screen and (min-width:721px) {
+  #tg {
+    font-size: 2rem;
+  }
+  
+}
+
+
+
+
+
+
+  
+
+  
+  <meta charset="UTF-8" />  // This prints in Hindi
+    @font-face {
+    font-family: KrutiDev;
+    src: url(path/to/kruti_dev.woff);
+  }
+  
+
+
+
+
+    </style>
+</head>
+<body>
+<h2 id="tg">GST CALCULATOR</h2>
+<div>
+<label id="amtl">ENTER AMOUNT HERE:</label> <input type="number" id="amt"  min="0"><br><br>
+<label id="gstl">SELECT GST RATE:</label> <button onClick="zgst()">0%</button>
+<button onClick="tgst()" id="thr">3%</button>
+<button onClick="fgst()" id="fv">5%</button>
+<button onClick="twgst()" id="tl">12%</button>
+<button onClick="eigst()" id="eh">18%</button>
+<button onClick="tegst()" id="te">28%</button>
+</div>
+<br>
+
+<button onClick="excgst()" id="inclu">EXCLUDING GST</button>
+<button onClick="incgst()" id="exclu">INCLUDING GST</button>
+
+
+<br><br>
+<p id="war">Please click on INCLUDING GST button if you want to add GST to your amount.</p>
+<p id="war2">यदि आप अपनी राशि में जीएसटी जोड़ना चाहते हैं तो कृपया <button id="inclu"> INCLUDING GST</button> बटन पर क्लिक करें।</p>
+
+<p id="demo"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<p id="demo4"></p>
+<p id="demo5"></p>
+<script>
+    var gstcent=0;
+    
+    function zgst() {
+        gstcent=0;
+        //code
+    }
+    function tgst() {
+        gstcent=3;
+        //code
+        }
+    function fgst() {
+        gstcent=5;//code
+    }
+    function twgst() {
+        gstcent=12;//code
+    }
+    function eigst() {
+        gstcent=18;//code
+    }
+    function tegst() {
+        gstcent=28;
+    }
+    
+    
+    function excgst()  {
+        var amount =  document.getElementById("amt").value;
+        var a = 100+Number(gstcent);
+        var b= 100/Number(a);
+        var c = Number(amount)*Number(b);
+        var d = Number(amount)-(c);
+        var charge = Number(amount)-Number(d);
+        document.getElementById("war").innerHTML = "";
+        document.getElementById("war2").innerHTML = "";
+
+        document.getElementById("demo").innerHTML = "INPUT AMOUNT (+ "+gstcent+" % GST ) = "+amount;
+        document.getElementById("demo2").innerHTML = "ORIGINAL AMOUNT ( NO GST ) = "+charge.toFixed(2);
+        document.getElementById("demo3").innerHTML = gstcent+"% GST = "+d.toFixed(2);
+    }
+    
+    function incgst() {
+        //document.getElementById("demo2").innerHTML = "gst= "+gstcent;
+        var amount =  document.getElementById("amt").value;
+        var gstamount = amount * gstcent;
+        //document.getElementById("demo3").innerHTML = "gst*amount "+gstamount;
+        var gstamount2 = gstamount/100;
+        
+        var finalcharge = Number(gstamount2)+ Number(amount);
+
+        document.getElementById("war").innerHTML = "";
+        document.getElementById("war2").innerHTML = "";
+        document.getElementById("demo").innerHTML = "INPUT AMOUNT ( NO GST ) = "+amount;
+        document.getElementById("demo2").innerHTML = "TOTAL SELLING PRICE ( + "+gstcent+"% GST ) = " +finalcharge.toFixed(2);
+        document.getElementById("demo3").innerHTML = "TOTAL GST = "+gstamount2.toFixed(2);
+        
+    }
+    
+</script>
+</body>
+</html>

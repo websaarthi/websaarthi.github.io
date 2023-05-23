@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Age Calculator</title>
+    <meta charset="UTF-8"/>  
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <style>
+        input[type=number]{
+        width: 10%;
+  padding: 0.29%;
+  margin: 4px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+    }
+    input[type=number]:focus {
+  border: 3px solid salmon;}
+
+  #btn{
+    border:0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #e99415;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: rgb(80, 228, 92);
+    background-image: linear-gradient(to top left, rgba(0,0,0,.2),rgba(0,0,0,.2)30%,rgba(0,0,0,0));
+    box-shadow: inset 2px 2px 3px rgba(255,255,255,.6),inset -2px -2px 3px rgba(0, 0, 0, .6);
+    
+    
+  }
+
+  #btn:hover {
+    background-color: rgb(32, 216, 109);
+
+  }
+  #btn:active{
+    box-shadow: inset -2px -2px 3px rgba(255,255,255,.6), inset 2px 2px 3px rgba(0,0,0,.6);
+  }
+
+  @media screen and (max-width:720px) {
+  #hl {
+    font-size: 2rem;
+  }
+  
+  input[type=number]{
+    width: 20%;
+  }
+  #dob{
+    font-size: 1rem ;
+  }
+  #edob{
+    font-size: 1rem ;
+  }
+}
+
+@media screen and (min-width:300px) and (max-width:900px) {
+  #hl {
+    font-size: 2rem;
+  }
+  
+  input[type=number]{
+    width: 15%;
+  }
+  #dob{
+    font-size: 1rem ;
+  }
+  #edob{
+    font-size: 1rem ;
+  }
+}
+
+
+
+
+
+  @media screen and (min-width:721px) {
+  #tg {
+    font-size: 2rem;
+  }
+  
+}
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <h2 id="hl">Age Calculator</h2>
+    <form>
+    <h3 id="dob">Enter your Birthdate / अपना जन्मतिथि लिखे ।  </h3>
+    Date:<input type="number" id="birthdate" min="1" max="31">
+    Month: <input type="number" id="birthmonth" min="1" max="12" >
+    Year: <input type="number" id="birthyear" maxlength="4">
+    
+    <h3 id="edob">Enter the date on which you want to know the age / कृपया वो तिथि लिखिए जिस दिन आप अपनी उम्र जानना चाहते है।  </h3>
+    
+    Date: <input type="number" id="enddate" min="1" max="31">
+    Month: <input type="number" id="endmonth" min="1" max="12">
+    Year: <input type="number" id="endyear" maxlength="4">
+    </form>
+    <br><br>
+    
+    <button onClick="agecal();" id="btn">CALCULATE AGE</button><br><br>
+    <p id="demo"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <script>
+        
+    function agecal() {
+            var birthdate = document.getElementById("birthdate").value;
+            var birthmonth = document.getElementById("birthmonth").value;
+            var birthyear = document.getElementById("birthyear").value;
+            var enddate = document.getElementById("enddate").value;
+            var endmonth = document.getElementById("endmonth").value;
+            var endyear = document.getElementById("endyear").value;
+                  
+            if ( (Number(enddate)==Number(birthdate))&&(Number(endyear)==Number(birthyear))&&(Number(endmonth)>Number(birthmonth))
+                &&(Number(endmonth)>0)&&(Number(endmonth)<=12)&&(Number(birthmonth)>0)&&(Number(birthmonth)<=12)&&(Number(endyear)>0)&&(Number(birthyear)>0)
+                &&(Number(enddate)>0)&&(Number(birthdate)>0)) {
+                var age = Number(endmonth)-Number(birthmonth);
+                document.getElementById("demo").innerHTML = "Total AGE: "+age+" Months";
+                document.getElementById("demo2").innerHTML = "";
+                document.getElementById("demo3").innerHTML = "Years = 0";
+                document.getElementById("demo4").innerHTML = "we wish you a long and healthy life";
+                document.getElementById("demo5").innerHTML = "हम आपके लंबे और स्वस्थ जीवन की कामना करते हैं";
+                
+            }
+            else if ( (Number(endmonth) < Number(birthmonth))&&(Number(endyear)==Number(birthyear))
+                     &&(Number(endmonth)>0)&&(Number(birthmonth)>0)&&(Number(endyear)>0)&&(Number(birthyear)>0)) {
+                document.getElementById("demo").innerHTML = "Sorry! The date on which you want to know your age is earlier than the birthdate";
+                document.getElementById("demo2").innerHTML = "जिस तारीख को आप अपनी उम्र जानना चाहते हैं वह जन्मतिथि से पहले की है";
+            }
+            else if ( (Number(endmonth) == Number(birthmonth))&&(Number(endyear)==Number(birthyear))&&(Number(enddate)>=Number(birthdate))
+                     &&(Number(endmonth)>0)&&(Number(endmonth)<=12)&&(Number(birthmonth)>0)&&(Number(birthmonth)<=12)&&(Number(endyear)>0)&&(Number(birthyear)>0)) {
+                document.getElementById("demo").innerHTML = "Days="+(Number(enddate)-Number(birthdate));
+                document.getElementById("demo2").innerHTML = "";
+                document.getElementById("demo4").innerHTML = "we wish you a long and healthy life";
+                document.getElementById("demo5").innerHTML = "हम आपके लंबे और स्वस्थ जीवन की कामना करते हैं";
+                
+            }
+                        
+            else if ( (Number(endmonth) == Number(birthmonth))&&(Number(endyear)==Number(birthyear))&&(Number(enddate)<Number(birthdate))) {
+                document.getElementById("demo").innerHTML = "Sorry! The date on which you want to know your age is earlier than the birthdate";
+                document.getElementById("demo2").innerHTML = "जिस तारीख को आप अपनी उम्र जानना चाहते हैं वह जन्मतिथि से पहले की है";
+            }
+            
+            else if (Number(endyear) < Number(birthyear)) {
+                document.getElementById("demo").innerHTML = "Sorry! The year in which you want to know your age is earlier than the birthdate";
+                document.getElementById("demo2").innerHTML = "जिस वर्ष आप अपनी आयु जानना चाहते हैं वह जन्मतिथि से पहले का है";
+            }
+            else if ((Number(endmonth) > Number(birthmonth))&&(Number(endyear)==Number(birthyear))&&(Number(enddate)>Number(birthdate))
+                     &&(Number(endmonth)>0)&&(Number(endmonth)<=12)&&(Number(birthmonth)>0)&&(Number(birthmonth)<=12)&&(Number(endyear)>0)&&(Number(birthyear)>0)
+                &&(Number(enddate)>0)&&(Number(birthdate)>0)){                
+                               
+                const date_of_end_month = new Date(Number(endyear),Number(endmonth),(enddate));
+                const birthday_in_previous_month = new Date(Number(endyear),Number(endmonth),Number(birthdate));
+                const difference_in_time =  Number(date_of_end_month.getTime() - Number(birthday_in_previous_month.getTime()));
+                const difference_in_days = Number(difference_in_time)/(1000*3600*24);
+                document.getElementById("demo").innerHTML = "Months ="+((Number(endmonth))-(Number(birthmonth)));
+                document.getElementById("demo2").innerHTML = "Days ="+difference_in_days;
+                document.getElementById("demo3").innerHTML = "Years = 0";
+                document.getElementById("demo4").innerHTML = "we wish you a long and healthy life";
+                document.getElementById("demo5").innerHTML = "हम आपके लंबे और स्वस्थ जीवन की कामना करते हैं";
+            }
+            
+            
+            
+            
+            
+            
+            
+            else if ((Number(endmonth) > Number(birthmonth))&&(Number(endyear)>Number(birthyear))&&(Number(enddate)<Number(birthdate))
+                     &&(Number(endmonth)<=12)&&(Number(birthmonth)<=12)&&(Number(enddate)<=31)&&(Number(birthdate)<=31)){                
+                               
+                const date_of_end_month = new Date(Number(endyear),Number(endmonth),(enddate));
+                const birthday_in_previous_month = new Date(Number(endyear),Number(endmonth)-1,(birthdate));        
+                const difference_in_time =  Number(date_of_end_month.getTime() - Number(birthday_in_previous_month.getTime()));
+                const difference_in_days = Number(difference_in_time)/(1000*3600*24);
+                document.getElementById("demo").innerHTML = " Months ="+((Number(endmonth)-Number(birthmonth))-1);
+                document.getElementById("demo2").innerHTML = "Days ="+difference_in_days;
+                document.getElementById("demo3").innerHTML = "Years ="+((Number(endyear)-Number(birthyear)));
+                document.getElementById("demo4").innerHTML = "we wish you a long and healthy life";
+                document.getElementById("demo5").innerHTML = "हम आपके लंबे और स्वस्थ जीवन की कामना करते हैं";
+                               
+            }
+            
+            else if ((Number(endmonth) > Number(birthmonth))&&(Number(endyear)>Number(birthyear))&&(Number(enddate)==Number(birthdate))
+                     &&(Number(endmonth)<=12)&&(Number(birthmonth)<=12)&&(Number(enddate)<=31)&&(Number(birthdate)<=31)){                
+                               
+                const date_of_end_month = new Date(Number(endyear),Number(endmonth),(enddate));
+                const birthday_in_previous_month = new Date(Number(endyear),Number(endmonth)-1,(birthdate));        
+                const difference_in_time =  Number(date_of_end_month.getTime() - Number(birthday_in_previous_month.getTime()));
+                const difference_in_days = Number(difference_in_time)/(1000*3600*24);
+                document.getElementById("demo").innerHTML = " Months ="+((Number(endmonth)-Number(birthmonth)));
+                document.getElementById("demo2").innerHTML = "Days =0";
+                document.getElementById("demo3").innerHTML = "Years ="+((Number(endyear)-Number(birthyear)));
+                document.getElementById("demo4").innerHTML = "we wish you a long and healthy life";
+                document.getElementById("demo5").innerHTML = "हम आपके लंबे और स्वस्थ जीवन की कामना करते हैं";
+                               
+            }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                  
+            else if ((Number(endmonth) > Number(birthmonth))&&(Number(endyear)==Number(birthyear))&&(Number(enddate)<Number(birthdate))
+                     &&(Number(endmonth)>0)&&(Number(endmonth)<=12)&&(Number(birthmonth)>0)&&(Number(birthmonth)<=12)&&(Number(endyear)>0)&&(Number(birthyear)>0)
+                &&(Number(enddate)>0)&&(Number(birthdate)>0)){                
+                               
+                const date_of_end_month = new Date(Number(endyear),Number(endmonth),(enddate));
+                const birthday_in_previous_month = new Date(Number(endyear),Number(endmonth)-1,(birthdate));
+                                
+                const difference_in_time =  Number(date_of_end_month.getTime() - Number(birthday_in_previous_month.getTime()));
+                const difference_in_days = Number(difference_in_time)/(1000*3600*24);
+                document.getElementById("demo").innerHTML = "Months ="+((Number(endmonth)-1)-(Number(birthmonth)));
+                document.getElementById("demo2").innerHTML = "Days ="+difference_in_days;
+                document.getElementById("demo3").innerHTML = "Years = 0";
+                document.getElementById("demo4").innerHTML = "we wish you a long and healthy life";
+                document.getElementById("demo5").innerHTML = "हम आपके लंबे और स्वस्थ जीवन की कामना करते हैं";
+                               
+            }
+            
+            
+            else if ((Number(endmonth) < Number(birthmonth))&&(Number(endyear)>Number(birthyear))&&(Number(enddate)<Number(birthdate))
+                     &&(Number(endmonth)>0)&&(Number(endmonth)<=12)&&(Number(birthmonth)>0)&&(Number(birthmonth)<=12)&&(Number(endyear)>0)&&(Number(birthyear)>0)
+                &&(Number(enddate)<31)&&(Number(birthdate)<=31)){                
+                               
+                const date_of_end_month = new Date(Number(endyear),Number(endmonth),(enddate));
+                const birthday_in_previous_month = new Date(Number(endyear),Number(endmonth)-1,(birthdate));        
+                const difference_in_time =  Number(date_of_end_month.getTime() - Number(birthday_in_previous_month.getTime()));
+                const difference_in_days = Number(difference_in_time)/(1000*3600*24);
+                document.getElementById("demo").innerHTML = " Months ="+(12-(Number(birthmonth)-Number(endmonth))-1);
+                document.getElementById("demo2").innerHTML = "Days ="+difference_in_days;
+                document.getElementById("demo3").innerHTML = "Years ="+((Number(endyear)-Number(birthyear))-1);
+                document.getElementById("demo4").innerHTML = "we wish you a long and healthy life";
+                document.getElementById("demo5").innerHTML = "हम आपके लंबे और स्वस्थ जीवन की कामना करते हैं";
+                               
+            }
+            else if ((Number(endmonth) < Number(birthmonth))&&(Number(endyear)>Number(birthyear))&&(Number(enddate)>Number(birthdate))
+                     &&(Number(endmonth)>0)&&(Number(endmonth)<=12)&&(Number(birthmonth)>0)&&(Number(birthmonth)<=12)&&(Number(endyear)>0)&&(Number(birthyear)>0)
+                &&(Number(enddate)<=31)&&(Number(birthdate)<31)){                
+                               
+                const date_of_end_month = new Date(Number(endyear),Number(endmonth),(enddate));
+                const birthday_in_previous_month = new Date(Number(endyear),Number(endmonth),(birthdate));        
+                const difference_in_time =  Number(date_of_end_month.getTime() - Number(birthday_in_previous_month.getTime()));
+                const difference_in_days = Number(difference_in_time)/(1000*3600*24);
+                document.getElementById("demo").innerHTML = " Months ="+((12-(Number(birthmonth)-Number(endmonth))));
+                document.getElementById("demo2").innerHTML = "Days ="+difference_in_days;
+                document.getElementById("demo3").innerHTML = "Years ="+((Number(endyear)-Number(birthyear))-1);
+                document.getElementById("demo4").innerHTML = "we wish you a long and healthy life";
+                document.getElementById("demo5").innerHTML = "हम आपके लंबे और स्वस्थ जीवन की कामना करते हैं";
+                               
+            }
+            
+            
+            else if ((Number(endyear)>Number(birthyear))&&(Number(enddate)>Number(birthdate))&&(Number(endmonth)>Number(birthmonth))
+                     &&(Number(endmonth)>=2)&&(Number(endmonth)>0)&&(Number(endmonth)<=12)&&(Number(birthmonth)>0)&&(Number(birthmonth)<=12)&&(Number(endyear)>0)&&(Number(birthyear)>0)
+                &&(Number(enddate)>0)&&(Number(birthdate)>0))
+                     {
+                                                             
+                const date_of_end_month = new Date(Number(endyear),Number(endmonth),(enddate));
+                const birthday_in_previous_month = new Date(Number(endyear),Number(endmonth),Number(birthdate));
+                const difference_in_time =  Number(date_of_end_month.getTime() - Number(birthday_in_previous_month.getTime()));
+                const difference_in_days = Number(difference_in_time)/(1000*3600*24);
+                document.getElementById("demo").innerHTML = "Months ="+((Number(endmonth))-(Number(birthmonth)));
+                document.getElementById("demo2").innerHTML = "Days = "+difference_in_days;
+                document.getElementById("demo3").innerHTML = "Years = "+(Number(endyear)-Number(birthyear));
+                document.getElementById("demo4").innerHTML = "We wish you a long and healthy life";
+                document.getElementById("demo5").innerHTML = "हम आपके लंबे और स्वस्थ जीवन की कामना करते हैं";
+                }
+                
+              else if ((Number(endyear)>Number(birthyear))&&(Number(enddate)<Number(birthdate))&&(Number(endmonth)<Number(birthmonth))
+                       &&(Number(endmonth)==1)&&(Number(endmonth)>0)&&(Number(endmonth)<=12)&&(Number(birthmonth)>0)&&(Number(birthmonth)<=12)&&(Number(endyear)>0)&&(Number(birthyear)>0)
+                &&(Number(enddate)>0)&&(Number(birthdate)>0)) {
+                
+                const date_of_end_month = new Date(Number(endyear),Number(endmonth),(enddate));
+                const birthday_in_previous_month = new Date(Number(endyear)-1,12,Number(birthdate));
+                const difference_in_time =  Number(date_of_end_month.getTime() - Number(birthday_in_previous_month.getTime()));
+                const difference_in_days = Number(difference_in_time)/(1000*3600*24);
+                document.getElementById("demo").innerHTML = " Months ="+(12-(Number(birthmonth)-Number(endmonth))-1);
+                document.getElementById("demo2").innerHTML = "Days ="+difference_in_days;
+                document.getElementById("demo3").innerHTML = "Years ="+((Number(endyear)-Number(birthyear))-1);
+                document.getElementById("demo4").innerHTML = "We wish you a long and healthy life";
+                document.getElementById("demo5").innerHTML = "हम आपके लंबे और स्वस्थ जीवन की कामना करते हैं";
+              }
+                else if ((Number(endyear)>Number(birthyear))&&(Number(enddate)<Number(birthdate))&&(Number(endmonth)==Number(birthmonth))
+                         &&(Number(endmonth)==1)&&(Number(endmonth)>0)&&(Number(endmonth)<=12)&&(Number(birthmonth)>0)&&(Number(birthmonth)<=12)&&(Number(endyear)>0)&&(Number(birthyear)>0)
+                &&(Number(enddate)>0)&&(Number(birthdate)>0)) {
+                
+                const date_of_end_month = new Date(Number(endyear),Number(endmonth),(enddate));
+                const birthday_in_previous_month = new Date(Number(endyear)-1,12,Number(birthdate));
+                const difference_in_time =  Number(date_of_end_month.getTime() - Number(birthday_in_previous_month.getTime()));
+                const difference_in_days = Number(difference_in_time)/(1000*3600*24);
+                document.getElementById("demo").innerHTML = " Months ="+(12-(Number(birthmonth)-Number(endmonth))-1);
+                document.getElementById("demo2").innerHTML = "Days ="+difference_in_days;
+                document.getElementById("demo3").innerHTML = "Years ="+((Number(endyear)-Number(birthyear))-1);
+                document.getElementById("demo4").innerHTML = "We wish you a long and healthy life";
+                document.getElementById("demo5").innerHTML = "हम आपके लंबे और स्वस्थ जीवन की कामना करते हैं";
+              }
+              
+              else if ((Number(endyear)>Number(birthyear))&&(Number(enddate)>Number(birthdate))&&(Number(endmonth)==Number(birthmonth))
+                       &&(Number(endmonth)>0)&&(Number(endmonth)<=12)&&(Number(birthmonth)>0)&&(Number(birthmonth)<=12)&&(Number(endyear)>0)&&(Number(birthyear)>0)
+                &&(Number(enddate)>0)&&(Number(birthdate)>0))
+                     {
+                                                             
+                const date_of_end_month = new Date(Number(endyear),Number(endmonth),(enddate));
+                const birthday_in_previous_month = new Date(Number(endyear),Number(endmonth),Number(birthdate));
+                const difference_in_time =  Number(date_of_end_month.getTime() - Number(birthday_in_previous_month.getTime()));
+                const difference_in_days = Number(difference_in_time)/(1000*3600*24);
+                document.getElementById("demo").innerHTML = " Months ="+((Number(endmonth))-(Number(birthmonth)));
+                document.getElementById("demo2").innerHTML =" Days ="+difference_in_days;
+                document.getElementById("demo3").innerHTML = "Years ="+(Number(endyear)-Number(birthyear));
+                document.getElementById("demo4").innerHTML = "We wish you a long and healthy life";
+                document.getElementById("demo5").innerHTML = "हम आपके लंबे और स्वस्थ जीवन की कामना करते हैं";
+                }
+                
+                else if ((Number(endmonth) == Number(birthmonth))&&(Number(endyear)>Number(birthyear))&&(Number(enddate)<Number(birthdate))
+                         &&(Number(endmonth)>0)&&(Number(endmonth)<=12)&&(Number(birthmonth)>0)&&(Number(birthmonth)<=12)&&(Number(endyear)>0)&&(Number(birthyear)>0)
+                &&(Number(enddate)>0)&&(Number(birthdate)>0)){                
+                               
+                const date_of_end_month = new Date(Number(endyear),Number(endmonth),(enddate));
+                const birthday_in_previous_month = new Date(Number(endyear),Number(endmonth)-1,(birthdate));        
+                const difference_in_time =  Number(date_of_end_month.getTime() - Number(birthday_in_previous_month.getTime()));
+                const difference_in_days = Number(difference_in_time)/(1000*3600*24);
+                document.getElementById("demo").innerHTML = " Months ="+(12-(Number(birthmonth)-Number(endmonth))-1);
+                document.getElementById("demo2").innerHTML = "Days ="+difference_in_days;
+                document.getElementById("demo3").innerHTML = "Years ="+((Number(endyear)-Number(birthyear))-1);
+                document.getElementById("demo4").innerHTML = "We wish you a long and healthy life";
+                document.getElementById("demo5").innerHTML = "हम आपके लंबे और स्वस्थ जीवन की कामना करते हैं";
+                               
+            }
+            
+            else if ((Number(endmonth) == Number(birthmonth))&&(Number(endyear)>Number(birthyear))&&(Number(enddate)==Number(birthdate))
+                     &&(Number(endmonth)>0)&&(Number(endmonth)<=12)&&(Number(birthmonth)>0)&&(Number(birthmonth)<=12)&&(Number(endyear)>0)&&(Number(birthyear)>0)
+                &&(Number(enddate)>0)&&(Number(birthdate)>0)){                
+                               
+                
+                document.getElementById("demo").innerHTML = " Months = 0";
+                document.getElementById("demo2").innerHTML = "Days = 0";
+                document.getElementById("demo3").innerHTML = "Years ="+(Number(endyear)-Number(birthyear));
+                document.getElementById("demo4").innerHTML = "We wish you a long and healthy life";
+                document.getElementById("demo5").innerHTML = "हम आपके लंबे और स्वस्थ जीवन की कामना करते हैं";
+                               
+            }
+            
+            else if ((Number(birthdate)==0)||(Number(birthmonth)==0)||(Number(birthyear)==0)||(Number(endyear)==0)||(Number(endmonth)==0)||(Number(enddate)==0)) {
+                document.getElementById("demo").innerHTML = "Please fill in all the required fields";
+                document.getElementById("demo2").innerHTML = "";
+                document.getElementById("demo3").innerHTML = "";
+                document.getElementById("demo4").innerHTML = "";
+                document.getElementById("demo5").innerHTML = "";
+            }
+            
+            else if ((Number(birthdate)>31)||(Number(enddate)>31)) {
+                document.getElementById("demo").innerHTML = "Please Write the Date number between 1 and 31";
+                document.getElementById("demo2").innerHTML = "";
+                document.getElementById("demo3").innerHTML = "";
+                document.getElementById("demo4").innerHTML = "";
+                document.getElementById("demo5").innerHTML = "";
+            }
+            else if ((Number(endmonth)>12)||(Number(birthmonth)>12)) {
+                document.getElementById("demo").innerHTML = "Please write the month number between 1 and 12";
+                document.getElementById("demo2").innerHTML = "कृपया महीने की संख्या 1 और 12 के बीच लिखें।";
+                document.getElementById("demo3").innerHTML = "";
+                document.getElementById("demo4").innerHTML = "";
+                document.getElementById("demo5").innerHTML = "";
+            }
+            
+    
+    
+    }
+    </script>
+    
+    
+
+
+</body>
+</html>
