@@ -3,7 +3,7 @@
     "short_name": "SAARTHI",
     "icons": [
       {
-        "src": "assests/smart.svg",
+        "src": "/smart.svg",
         "sizes": "any",
         "type": "image/svg+xml",
         "purpose": "any"
@@ -23,7 +23,7 @@
       
     ],
     "lang": "en-US",
-    "start_url": "/saarthipwa.html",
+    "start_url": "/index.html",
     "display": "standalone",
     "background_color": "#45bdab",
     "theme_color": "#142d2c",
