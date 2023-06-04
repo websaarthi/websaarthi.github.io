@@ -1,136 +1,138 @@
 {
-    "name": "SAARTHI",
-    "short_name": "SAARTHI",
-    "icons": [
-      {
-        "src": "/smart.svg",
-        "sizes": "any",
-        "type": "image/svg+xml",
-        "purpose": "any"
-      },
-      {
-        "src": "/smart2.png",
-        "sizes": "512x512",
-        "type": "image/png",
-        "purpose": "maskable"
-      },
-      {
-        "src": "/smart3.png",
-        "sizes": "192x192",
-        "type": "image/png",
-        "purpose": "any"
-      },
-      {
-        "src": "/smart16.png",
-        "sizes": "16x16",
-        "type": "image/png",
-        "purpose": "any"
-      },
-      {
-        "src": "/smart44.png",
-        "sizes": "44x44",
-        "type": "image/png",
-        "purpose": "any"
-      },
-        {
-        "src": "/smart48.png",
-        "sizes": "48x48",
-        "type": "image/png",
-        "purpose": "any"
-      },
-        {
-        "src": "/smart60.png",
-        "sizes": "60x60",
-        "type": "image/png",
-        "purpose": "any"
-      },
-        {
-        "src": "/smart64.png",
-        "sizes": "64x64",
-        "type": "image/png",
-        "purpose": "any"
-      },
-        {
-        "src": "/smart71.png",
-        "sizes": "71x71",
-        "type": "image/png",
-        "purpose": "any"
-      },
-        {
-        "src": "/smart72.png",
-        "sizes": "72x72",
-        "type": "image/png",
-        "purpose": "any"
-      },
-        {
-        "src": "/smart80.png",
-        "sizes": "80x80",
-        "type": "image/png",
-        "purpose": "any"
-      },
-        {
-        "src": "/smart96.png",
-        "sizes": "96x96",
-        "type": "image/png",
-        "purpose": "any"
-      },
-        {
-        "src": "/smart128.png",
-        "sizes": "128x128",
-        "type": "image/png",
-        "purpose": "any"
-      },
-        {
-        "src": "/smart150.png",
-        "sizes": "150x150",
-        "type": "image/png",
-        "purpose": "any"
-      },
-        {
-        "src": "/smart256.png",
-        "sizes": "256x256",
-        "type": "image/png",
-        "purpose": "any"
-      },
-        {
-        "src": "/smart310.png",
-        "sizes": "310x310",
-        "type": "image/png",
-        "purpose": "any"
-      },
-        {
-        "src": "/smart620300.png",
-        "sizes": "620x300",
-        "type": "image/png",
-        "purpose": "any"
-      }
-    ],
-    "lang": "en-US",
-    "start_url": "/index.html",
-    "display": "standalone",
-    "background_color": "#45bdab",
-    "theme_color": "#142d2c",
-    "prefer_related_applications": false,
-    "description": "View total number of cylinders in the Godown",
-    "screenshots": [
-      {
-        "src": "/smart.svg",
-        "type": "image/svg+xml",
-        "sizes": "1836x1836"
-      },
-      {
-        "src": "/smart.svg",
-        "type": "image/svg+xml",
-        "sizes": "1836x1836"
-      }
-    ],
-    "orientation": "natural",
-    "display_override": [
-      "standalone"
-    ],
-    "dir": "ltr",
-    "categories": [
-      "business",
-      "utilities"
-    ]
-  }
+  "name": "SAARTHI",
+  "short_name": "SAARTHI",
+  "icons": [
+    {
+      "src": "/smart.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/smart2.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/smart3.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/smart16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/smart44.png",
+      "sizes": "44x44",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/smart48.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/smart60.png",
+      "sizes": "60x60",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/smart64.png",
+      "sizes": "64x64",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/smart71.png",
+      "sizes": "71x71",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/smart72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/smart80.png",
+      "sizes": "80x80",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/smart96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/smart128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/smart150.png",
+      "sizes": "150x150",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/smart256.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/smart310.png",
+      "sizes": "310x310",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/smart620300.png",
+      "sizes": "620x300",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "lang": "en-US",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#45bdab",
+  "theme_color": "#142d2c",
+  "prefer_related_applications": false,
+  "description": "सारथी- आपका सच्चा साथी।",
+  "screenshots": [
+    {
+      "src": "/smart.svg",
+      "type": "image/svg+xml",
+      "sizes": "1836x1836"
+    },
+    {
+      "src": "/smart.svg",
+      "type": "image/svg+xml",
+      "sizes": "1836x1836"
+    }
+  ],
+  "orientation": "natural",
+  "display_override": [
+    "standalone"
+  ],
+  "dir": "ltr",
+  "categories": [
+    "education",
+    "navigation",
+    "news",
+    "utilities"
+  ]
+}
