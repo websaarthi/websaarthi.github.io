@@ -5,6 +5,8 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox
 const CACHE = "pwabuilder-page";
 var filesToCache = [
   '/index.html',
+  '/offline2.html',
+  'age.html',
   
   '/cash calculator.html'
 ];
