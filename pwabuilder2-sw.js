@@ -6,8 +6,8 @@ const CACHE = "pwabuilder-page";
 var filesToCache = [
   '/index.html',
   '/offline2.html',
-  'age.html',
-  'icecream.svg',
+  '/age.html',
+  '/icecream.svg',
   
   '/cash calculator.html'
 ];
