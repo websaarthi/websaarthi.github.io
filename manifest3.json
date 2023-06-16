@@ -119,9 +119,9 @@
       "sizes": "1836x1836"
     },
     {
-      "src": "/smart.svg",
-      "type": "image/svg+xml",
-      "sizes": "1836x1836"
+      "src": "/screenshot1.png",
+      "type": "image/png",
+      "sizes": "1080x1910"
     }
   ],
   "orientation": "natural",
