@@ -7,13 +7,14 @@ var filesToCache = [
   '/index.html',
   '/offline2.html',
   '/age.html',
+  '/cash calculator.html',
   '/icecream.svg',
   
   '/cash calculator.html'
 ];
 
 // TODO: replace the following with the correct offline fallback page i.e.: const offlineFallbackPage = "offline.html";
-const offlineFallbackPage = "offline2.html";
+const offlineFallbackPage = "index.html";
 
 self.addEventListener("message", (event) => {
   if (event.data && event.data.type === "SKIP_WAITING") {
